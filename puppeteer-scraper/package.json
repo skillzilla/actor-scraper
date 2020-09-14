@@ -11,6 +11,9 @@
     "@types/puppeteer": "^3.0.0",
     "markdown-toc": "^1.2.0"
   },
+  "peerDependencies": {
+		"cheerio": "^1.0.0-rc.3"
+	},
   "scripts": {
     "start": "node main.js",
     "build-toc": "./node_modules/.bin/markdown-toc README.md -i",
