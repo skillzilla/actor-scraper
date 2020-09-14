@@ -12,8 +12,6 @@ RUN npm --quiet set progress=false \
  && echo "NPM version:" \
  && npm --version \
  && echo "Google Chrome version:" \
- && bash -c "$APIFY_CHROME_EXECUTABLE_PATH --version" \
- && echo "ChromeDriver version:" \
- && chromedriver --version
+ && bash -c "$APIFY_CHROME_EXECUTABLE_PATH --version"
 
 COPY . ./
