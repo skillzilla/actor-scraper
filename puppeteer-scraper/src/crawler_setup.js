@@ -1,4 +1,5 @@
 const Apify = require('apify');
+const cheerio = require('cheerio');
 const {
     tools,
     browserTools,
@@ -55,7 +56,7 @@ const { utils: { log, puppeteer } } = Apify;
 class CrawlerSetup {
     /* eslint-disable class-methods-use-this */
     constructor(input) {
-        this.name = 'Puppeteer Scraper';
+        this.name = 'PuppeteerCheerio Scraper';
         // Set log level early to prevent missed messages.
         if (input.debugLog) log.setLevel(log.LEVELS.DEBUG);
 
@@ -291,6 +292,7 @@ class CrawlerSetup {
                     status: response && response.status(),
                     headers: response && response.headers(),
                 },
+                cheerio,
             },
         };
         const { context, state } = createContext(contextOptions);
