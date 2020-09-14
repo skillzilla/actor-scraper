@@ -1,4 +1,4 @@
-FROM apify/actor-node-chrome
+FROM apify/actor-node-chrome-xvfb
 
 COPY package.json package-lock.json ./
 
@@ -10,6 +10,10 @@ RUN npm --quiet set progress=false \
  && echo "Node.js version:" \
  && node --version \
  && echo "NPM version:" \
- && npm --version
+ && npm --version \
+ && echo "Google Chrome version:" \
+ && bash -c "$APIFY_CHROME_EXECUTABLE_PATH --version" \
+ && echo "ChromeDriver version:" \
+ && chromedriver --version
 
 COPY . ./
