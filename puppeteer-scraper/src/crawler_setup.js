@@ -172,6 +172,7 @@ class CrawlerSetup {
             puppeteerPoolOptions: {
                 useLiveView: true,
                 recycleDiskCache: true,
+                retireInstanceAfterRequestCount: 1
             },
             launchPuppeteerOptions: {
                 ignoreHTTPSErrors: this.input.ignoreSslErrors,
